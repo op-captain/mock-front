@@ -40,7 +40,7 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 @Component
 export default class HelloWorld extends Vue {
   //接口地址
-  public url = "http://localhost:3000/api/v1/user";
+  public url = "http://139.199.198.182:3000/api/v1/user";
 
   //接口需要的参数
   public params:object = {
