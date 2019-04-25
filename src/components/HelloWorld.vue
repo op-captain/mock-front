@@ -1,5 +1,8 @@
 <template>
-<h1>2016 - 07 -11 ~ 小乖乖！：）</h1>
+<div>
+<h1>测试接口</h1>
+<input @click="addUser" type="button" v-bind:value="content">
+</div>
   <!-- <div class="hello">
     <h1>{{ msg }}</h1>
     <p>
@@ -36,7 +39,38 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 
 @Component
 export default class HelloWorld extends Vue {
-  @Prop() private msg!: string;
+  //接口地址
+  public url = "http://localhost:3000/api/v1/user";
+
+  //接口需要的参数
+  public params:object = {
+    "name":"zj",
+    "sex":1,
+    "age":18,
+    "avator":"http://tx.haiqq.com/uploads/allimg/170506/0G9454641-7.jpg"
+  }
+
+  //fetch参数
+  protected option:object = {
+    method: 'POST',
+    mode: 'cors',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded'
+    },
+    body: JSON.stringify(this.params)
+  }
+
+  //按钮文字
+  protected content:string = "调用新增用户接口";
+
+  //事件方法
+  public async addUser(){
+    let result = await fetch(this.url,this.option);
+
+    result.json().then((data)=>{
+      console.log(data);
+    })
+  }
 }
 </script>
 
