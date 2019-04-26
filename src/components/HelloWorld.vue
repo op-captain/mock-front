@@ -1,6 +1,6 @@
 <template>
 <div>
-<h1>测试接口</h1>
+<h1>测试接口-nginx反向代理</h1>
 <input @click="addUser" type="button" v-bind:value="content">
 </div>
 </template>
@@ -31,7 +31,7 @@ export default class HelloWorld extends Vue {
   }
 
   //按钮文字
-  protected content:string = "调用新增用户接口";
+  protected content:string = "调用用户新增接口";
 
   //事件方法
   public async addUser(){
