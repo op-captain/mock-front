@@ -1,6 +1,6 @@
 <template>
 <div>
-<h1>测试接口-nginx反向代理</h1>
+<h1>测试接口-nginx反向代理调用接口</h1>
 <input @click="addUser" type="button" v-bind:value="content">
 </div>
 </template>
